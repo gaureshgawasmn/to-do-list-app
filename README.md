@@ -31,3 +31,5 @@ The application allows users to manage their tasks effectively through a user-fr
 2. Navigate to the `backend` directory.
 3. Run the `gradle build` command
 4. Pick up the jar from and run it with your favourite server
+5. You can access h2 console at http://localhost:8081/h2-console
+6. You can access swagger api at http://localhost:8081/swagger-ui/index.html

@@ -1,5 +1,6 @@
 package com.techlab.todolist.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ public class Task {
     private LocalDate dueDate;
     private boolean completed;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private User user;
 
     public Task(){}
