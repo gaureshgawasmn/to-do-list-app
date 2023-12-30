@@ -11,8 +11,8 @@ public class SwaggerConfig {
     @Bean
     public static OpenAPI openAPIMetaInfo() {
         return new OpenAPI()
-                .info(new Info().title("API documentation")
-                        .description("API developer portal documentation")
+                .info(new Info().title("API Documentation")
+                        .description("Developer portal documentation")
                         .version("v1"));
     }
 

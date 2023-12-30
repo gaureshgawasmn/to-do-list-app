@@ -1,6 +1,7 @@
 package com.techlab.todolist.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -9,16 +10,22 @@ import java.time.LocalDate;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique task id - Long", example = "1")
     private Long id;
+    @Schema(description = "Task title - String", example = "weekly study target")
     private String title;
+    @Schema(description = "Task description - String", example = "Complete the learning of docker by this week")
     private String description;
+    @Schema(description = "Due date for task - LocalDate", example = "2023-12-30")
     private LocalDate dueDate;
+    @Schema(description = "Flag to mark the task status as done - boolean", example = "true or false")
     private boolean completed;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private User user;
 
-    public Task(){}
+    public Task() {
+    }
 
     public Task(String title, String description, LocalDate dueDate) {
         this.title = title;
